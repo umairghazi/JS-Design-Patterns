@@ -1,1 +1,1 @@
-"# JS-Design-Patterns" 
+# JS-Design-Patterns
