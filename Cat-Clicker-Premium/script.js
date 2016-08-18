@@ -55,6 +55,7 @@
 					return function() {
 						controller.setCurrentCat(cat);
 						catDetailView.render();
+						adminView.render();
 					};
 				})(cat));
 
@@ -72,6 +73,7 @@
 			this.adminForm = document.getElementById('adminForm');
 			this.adminDiv = document.getElementById('admin');
 			this.cancelBtn = document.getElementById('cancel');
+			this.saveBtn = document.getElementById('save');
 
 			this.adminDiv.style.display = model.adminPanel;
 			this.adminBtn.addEventListener('click', function(event) {
@@ -81,17 +83,24 @@
 			this.cancelBtn.addEventListener('click', function(event) {
 				controller.toggleAdminDisplay();
 			});
+
+			this.saveBtn.addEventListener('click',function(event){
+
+				var newName = document.getElementById('name').value;
+				var newImg = document.getElementById('img').value;
+				var newClickCount = document.getElementById('clickCount').value;
+
+				controller.updateModel(newName,newImg,newClickCount);
+			});
 		},
 
 		render: function() {
 			this.adminDiv.style.display = model.adminPanel;
 
-			this.name = document.getElementById('name');
-			this.img = document.getElementById('img');
-			this.clickCount = document.getElementById('clickCount');
-
 			var currentCat = controller.getCurrentCat();
-
+			document.getElementById('name').value = currentCat.name;
+			document.getElementById('img').value = currentCat.img;
+			document.getElementById('clickCount').value = currentCat.clickCount;
 
 		}
 
@@ -151,6 +160,17 @@
 				model.adminPanel = "none";
 				adminView.render();
 			}
+		},
+
+		updateModel: function(newName,newImg,newClickCount){
+			var currCat = this.getCurrentCat();
+			currCat.name = newName;
+			currCat.img = newImg;
+			currCat.clickCount = newClickCount;
+			catListView.render();
+			catDetailView.render();
+			adminView.renderw();
+
 		}
 	};
 
