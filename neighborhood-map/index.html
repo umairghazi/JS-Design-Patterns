@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/knockout/dist/knockout.js"></script>
+
+    </head>
+    <body>
+
+        <div id="sidebar" style="float:left; width:40%; height:100%">
+            <ul id="places" data-bind="foreach:placeList">
+                <li data-bind="text:name, click:$parent.drawMap"></li>
+            </ul>
+        </div>
+        <div id="map" style="float:left; width:60%; height:100%"></div>
+
+        <script>
+            // var map; function initMap() {   map = new google.maps.Map(document.getElementById('map'), {     center: {lat: 38.9021540, lng: -77.2102600},     zoom: 15   }); }
+        </script>
+        <script src="js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGzeYjnW3xl0g_LLKEoZ4ylJqkhWz0BQk&callback=loadApp" async defer></script>
+
+    </body>
+</html>
