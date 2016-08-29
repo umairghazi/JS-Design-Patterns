@@ -6,3 +6,33 @@ html, body , #mapContainer{
 #map {
   height: 100%;
 }
+
+#placeListItem {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #2196F3;
+  color: white;
+  margin-bottom: 0.5px
+}
+
+#placeListItem:hover{
+  text-decoration: underline;
+}
+
+#heading{
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Changa One', cursive;
+  background-color: #68EFAD;
+  text-align: center;
+}
+
+searchIcon{
+  float: left;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+  margin-left: 2px;
+}

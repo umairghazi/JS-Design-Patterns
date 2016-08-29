@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "knockout": "^3.4.0",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
   }
 }

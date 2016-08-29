@@ -41,5 +41,31 @@ export default StyleSheet.create({
     },
     "map": {
         "height": "100%"
+    },
+    "placeListItem": {
+        "width": "100%",
+        "textAlign": "center",
+        "fontSize": 18,
+        "cursor": "pointer",
+        "backgroundColor": "#2196F3",
+        "color": "white",
+        "marginBottom": 0.5
+    },
+    "placeListItem:hover": {
+        "textDecoration": "underline"
+    },
+    "heading": {
+        "fontSize": 24,
+        "fontWeight": "500",
+        "fontFamily": "'Changa One', cursive",
+        "backgroundColor": "#68EFAD",
+        "textAlign": "center"
+    },
+    "searchIcon": {
+        "float": "left",
+        "marginTop": -20,
+        "position": "relative",
+        "zIndex": 2,
+        "marginLeft": 2
     }
 });
