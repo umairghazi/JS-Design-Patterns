@@ -29,10 +29,5 @@ html, body , #mapContainer{
   text-align: center;
 }
 
-searchIcon{
-  float: left;
-  margin-top: -20px;
-  position: relative;
-  z-index: 2;
-  margin-left: 2px;
-}
+
+
