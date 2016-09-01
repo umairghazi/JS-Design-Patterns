@@ -38,6 +38,9 @@ var Place = function(data) {
 
 };
 
+//flickr key - f144ec1cd6793bc2ae9b3db88bac0de3
+//secret - 075f9ebd9994765f
+
 
 var ViewModel = function() {
 
@@ -148,6 +151,38 @@ var ViewModel = function() {
 
 function loadApp() {
     ko.applyBindings(new ViewModel());
-
-
 }
+
+
+var options = { 
+  "api_key": "f144ec1cd6793bc2ae9b3db88bac0de3",
+  "method": "flickr.photos.search", // You can replace this with whatever method,
+                                  // flickr.photos.search fits your use case best, though.
+  "format": "json",
+  "nojsoncallback": "1",
+  "text": "new york"  // This is where you'll put your "file name"
+}
+
+var makeFlickrRequest = function(options, cb) {
+  var url, xhr, item, first;
+
+  url = "https://api.flickr.com/services/rest/";
+  first = true;
+
+  for (item in options) {
+    if (options.hasOwnProperty(item)) {
+      url += (first ? "?" : "&") + item + "=" + options[item];
+      first = false;
+    }
+  }
+
+  xhr = new XMLHttpRequest();
+  xhr.onload = function() { cb(this.response); };
+  xhr.open('get', url, true);
+  xhr.send();
+
+};
+
+makeFlickrRequest(options, function(data) { console.log(data); }); 
+
+
